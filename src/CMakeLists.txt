@@ -1,17 +1,17 @@
 cmake_minimum_required(VERSION 3.18)
-project(Holoscan-Add-Matrices LANGUAGES CXX CUDA)
+project(cudaTest LANGUAGES CXX CUDA)
 
 enable_language(CUDA)
 
 find_package(Holoscan REQUIRED)
 find_package(CUDAToolkit REQUIRED)
 
-add_executable(Holoscan-Add-Matrices
-    src/cudaTest.cpp
-    src/cudaKernel.cu
+add_executable(cudaTest
+    cudaTest.cpp
+    cudaKernel.cu
 )
 
-target_link_libraries(Holoscan-Add-Matrices PRIVATE
+target_link_libraries(cudaTest PRIVATE
     holoscan::core
     holoscan::ucp
     holoscan::ucxx
@@ -20,9 +20,9 @@ target_link_libraries(Holoscan-Add-Matrices PRIVATE
     CUDA::cudart
 )
 
-target_compile_features(Holoscan-Add-Matrices PRIVATE cxx_std_17)
+target_compile_features(cudaTest PRIVATE cxx_std_17)
 
-set_target_properties(Holoscan-Add-Matrices PROPERTIES
+set_target_properties(cudaTest PROPERTIES
     CUDA_SEPARABLE_COMPILATION ON
     CUDA_STANDARD 17
 )
