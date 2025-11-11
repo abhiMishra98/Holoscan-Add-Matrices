@@ -41,7 +41,7 @@ Once, makefile is generated run the following code
 ncu --replay-mode application -o compute_report ./cudaTest
 ```
 
-Open Nsight systems UI and locate the file
+Open Nsight compute directly with the file name as an argument
 ```bash
 ncu-ui compute_report.ncu-rep
 ```
